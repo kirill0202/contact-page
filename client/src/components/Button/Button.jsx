@@ -2,9 +2,15 @@ import React from 'react';
 import classNames from 'classnames';
 
 
-const Button = ({ title , classnamestyle}) => {
+const Button = ({ title , classnamestyle, type , disabled}) => {
     return (
-        <button className={classNames("btn waves-effect waves-light", classnamestyle)} type="submit" name="action">{title}
+        <button
+         type={type}
+         className={classNames("btn waves-effect waves-light", classnamestyle)} 
+         type="submit" 
+         disabled={disabled}
+         name="action">
+             {title} 
         </button>
     )
 }

@@ -4,9 +4,7 @@ import AuthUserFormLogin from '../components/AuthUserFormLogin/AuthUserFormLogin
 
 const AuthPage = () => {
     return (
-        <div>
-            <AuthUserFormLogin/>
-        </div>
+        <AuthUserFormLogin />
     )
 }
 export default AuthPage;

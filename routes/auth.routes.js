@@ -9,10 +9,11 @@ const { check, validationResult } = require('express-validator')
 ///api/auth/register
 router.post('/register', [
   check('email', 'некоректный email').isEmail(),
-  check('passwod', 'Минимальная длина пароля 6 мимволов').isLength({min: 6})
+  check('password', 'Минимальная длина пароля 6 мимволов').isLength({min: 6})
 ],
     async (req, res) => {
         try {
+            console.log(req.body)
             const errors = validationResult(req);
             if(!errors.isEmpty()){
                 return res.status(400).json({
@@ -21,6 +22,7 @@ router.post('/register', [
                 })
             }
             const { email, password } = req.body;
+          
             const condidate = await User.findOne({ email });
 
             if (condidate) {

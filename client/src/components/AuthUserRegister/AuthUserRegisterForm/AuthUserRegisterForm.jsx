@@ -1,12 +1,14 @@
 import React from 'react';
-import { Field, reduxForm } from "redux-form";
-import { Link } from 'react-router-dom';
+import { Field, reduxForm } from 'redux-form';
 import Button from '../../Button/Button';
 import Input from '../../Input/Input';
+import { Link } from 'react-router-dom';
 
-const AuthUserLogin = ({ handleSubmit, disabled}) => {
-    return (
-        <form className="card-panel teal lighten-2" onSubmit={handleSubmit}>
+
+
+const AuthUserRegisterForm = ({handleSubmit , disabled}) => {
+   return (
+       <form onSubmit={handleSubmit} className="card-panel teal lighten-2">
             <div className="row form__content">
                 <div className="row">
                     <div className="input-field col s12">
@@ -33,16 +35,17 @@ const AuthUserLogin = ({ handleSubmit, disabled}) => {
                     </div>
                 </div>
                 <div className="row col s12">
-                    <Button title={'Войти'} disabled={disabled}/>
-                    <Link to="/Register">
-                        <Button title={'Зарегистрироваться?'} classnamestyle={'cyan accent-4 form__button-sumbit'} type="button" />
-                    </Link>
+                  <Link to="/Login">
+                    <Button title={'Нажмите , чтобы войти в систему'} type="button"/>
+                  </Link>
+                    <Button title={'Регистрация'} classnamestyle={'cyan accent-4 form__button-sumbit'} disabled={disabled}/>
                 </div>
             </div>
-        </form>
-    )
+       </form>
+   )
 }
-const AuthUserLoginContainer = reduxForm({
-    form: 'AuthUserLogin'
-})(AuthUserLogin);
-export default AuthUserLoginContainer;
+const AuthUserRegisterFormContainer = reduxForm({
+    form: 'AuthUserRegisterForm'
+})(AuthUserRegisterForm);
+
+export default AuthUserRegisterFormContainer;
