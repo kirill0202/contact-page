@@ -1,0 +1,20 @@
+@import '../../style/const.scss';
+
+.form{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh; 
+     &__content{
+         width: 500px;
+         &-label{
+            color: $color__form-default !important;
+        }
+        &-input{
+           border-bottom:1px solid $color__form-default !important;
+        }
+     }
+     &__button-sumbit{
+        margin-left: 15px;
+     }
+}
