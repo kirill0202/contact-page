@@ -1,0 +1,21 @@
+ul,li, h4{
+    padding: 0;
+    margin: 0;
+}
+.menu{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__header-input{
+        border-bottom: 1px solid black !important;
+        width: 400px !important;
+    }
+    &__header-input::placeholder{
+       color: black;
+    }
+    &__list-item{
+        font-weight: bold;
+        cursor: pointer;
+    }
+}

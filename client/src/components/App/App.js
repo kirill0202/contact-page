@@ -4,6 +4,8 @@ import './App.css';
 import { useRoutes } from '../../pages/routes';
 import { useAuthorized } from '../../hooks/authorized';
 import { AuthContext } from '../../context/AuthContext';
+import Modal from '../Modal/Modal';
+
 
 function App() {
   const { token, login, userId, logout } = useAuthorized();
@@ -14,8 +16,10 @@ function App() {
     <AuthContext.Provider value={{
       token, login, logout, userId, isAuthorized
     }}>
-      <div className="App">
+      
+      <div className="App container">
         {routes}
+        <Modal/>
       </div>
     </AuthContext.Provider>
   );

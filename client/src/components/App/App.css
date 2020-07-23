@@ -1,1 +1,5 @@
 @import '~materialize-css/dist/css/materialize.min.css';
+.container{
+   width: 1300px;
+   margin: 0 auto;
+}

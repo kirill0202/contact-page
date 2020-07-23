@@ -1,10 +1,17 @@
 import React from 'react';
+import Menu from '../components/Menu/Menu';
+import ContactsAdd from '../components/ContactsAdd/ContactsAdd';
+import ContactListContainer from '../containers/ContactListContainer';
+
 
 const HomePage = () => {
     return (
-        <div>
-            <h1>Home</h1>
-        </div>
+        <>
+           <Menu/>
+           <ContactsAdd/>
+           <ContactListContainer/>
+    
+        </>
     )
 }
 export default HomePage;

@@ -1,12 +1,20 @@
-const { ADD_CONTACT } = require("../types/types");
+const { ADD_CONTACT, REMOVE_CONTACT, UPDATE_CONTACT } = require("../types/types");
 
-const initialState = [];
+const initialState = {
+    contact: [{ title: 'contact-1', id: 1 }]
+};
 
 
-const contactReducer = (state= initialState, action) => {
+const contactReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_CONTACT:
-            return state
+            return { ...state, contact: [...state.contact, action.payload] }
+        case REMOVE_CONTACT:
+            return {...state, contact: state.contact.filter((item) => item.id !== action.payload)}
+        case UPDATE_CONTACT:
+            return {...state, contact: state.contact.map((contact) => contact.id === action.payload.id ? 
+                {...contact, ...action.payload}
+         : contact)}
         default:
             return state
     }
