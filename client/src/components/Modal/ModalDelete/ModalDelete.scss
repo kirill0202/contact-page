@@ -1,0 +1,16 @@
+@import '../../../style/mixin/mixin.scss';
+
+
+.poppup__modal-delete{
+    @include modal__background;
+}
+.poppup__wrapper-delete{
+    @include modal__wrapper;
+}
+.modal__content-footer{
+    @include flex__end;
+    margin-top: 30px;
+}
+.modal__content-title{
+    text-align: center;
+}

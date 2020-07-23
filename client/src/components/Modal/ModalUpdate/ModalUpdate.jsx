@@ -33,13 +33,12 @@ const ModalUpdate = ({data}) => {
                 <div className="poppup__wrapper">
                    <div className="poppup__modal-content">
                      <Input 
-                     
                      placeholder='update contact' 
                      value={valueInput} 
                      onChange={onChangeHandle}/>
                    </div>
                     <div className="poppup__footer-modal">
-                        <Button title='Сохранить'onClick={updateContact} />
+                        <Button title='Сохранить'onClick={updateContact} classnamestyle={'cyan accent-3'}/>
                         <Button title='Закрыть' onClick={hideModalWindow} />
                     </div>
                 </div>

@@ -1,10 +1,12 @@
 import React from  'react';
 import { useSelector } from 'react-redux';
 import ModalUpdate from './ModalUpdate/ModalUpdate';
+import ModalDelete from './ModalDelete/ModalDelete';
 
 
 const modalCollection = {
       modalEdit: ModalUpdate,
+      modalRemove: ModalDelete,
   };
 
 const Modal = () => {
