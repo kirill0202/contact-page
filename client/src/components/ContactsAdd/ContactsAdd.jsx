@@ -13,8 +13,7 @@ const ContactsAdd = () => {
  
 
     const onChangeHandle = (e) => {
-        setValueInput(e.target.value);
-        
+        setValueInput(e.target.value)
     }
     const handleAddContanct = () => {
         const newContact = {
