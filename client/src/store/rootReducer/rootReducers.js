@@ -1,10 +1,12 @@
 import {combineReducers} from 'redux';
 import { reducer as formReducer } from "redux-form";
-import contactReducer from './contactReducer';
-import modalReducer from './modalReducer';
+import modalReducer from './modalReducer.ts';
+import categoryReducer from './categoryReducer.ts';
+import taskReducer from './taskReducer.ts';
 
 export const rootReducers = combineReducers({
-    contactReducer: contactReducer,
     modal: modalReducer,
+    categoryReducer: categoryReducer,
+    taskReducer: taskReducer,
     form: formReducer
 })

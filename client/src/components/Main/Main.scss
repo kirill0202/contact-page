@@ -1,0 +1,15 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.todo__group {
+    display: flex;
+    justify-content: space-between;
+}
+.todo__group-add {
+    display: flex;
+    justify-content: space-between;
+}
+.todo__wrapper {
+    margin-top: 30px;
+}

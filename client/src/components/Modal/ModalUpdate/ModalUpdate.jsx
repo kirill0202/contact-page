@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import Button from '../../Button/Button';
 import Input from '../../Input/Input';
 import { useDispatch } from 'react-redux';
-import { hideModal } from '../../../store/actions/actionModal/actionModal';
+import { hideModal } from '../../../store/actions/actionModal/actionModal.ts';
+import { actionUpdateCategory } from '../../../store/actions/actionsCategory/actionUpdateCategory.ts';
 import './ModalUpdate.scss';
-import { actionUpdateContact } from '../../../store/actions/actionUpdateContact';
-
-
 
 const ModalUpdate = ({data}) => {
     const {title, id} = data;
@@ -24,7 +22,7 @@ const ModalUpdate = ({data}) => {
           title:valueInput,
           id
       }
-      dispatch(actionUpdateContact(updateDataContact));
+      dispatch(actionUpdateCategory(updateDataContact));
       hideModalWindow();
     }
     return (

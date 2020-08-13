@@ -1,0 +1,8 @@
+@import '../../style/mixin/mixin.scss';
+.task__input{
+    @include  input__default;
+}
+.task__button{
+    @include button__default;
+    margin-right: 0;
+}

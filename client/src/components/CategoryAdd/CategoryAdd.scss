@@ -1,0 +1,8 @@
+@import '../../style/mixin/mixin.scss';
+
+.category__button{
+    @include  button__default;
+}
+.category__input{
+    @include input__default;
+}

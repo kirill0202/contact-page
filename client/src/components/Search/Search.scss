@@ -1,0 +1,15 @@
+@import "../../style/mixin/mixin.scss";
+.search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__label{
+        color: #fff;
+    }
+    &__button{
+        @include button__default;
+    }
+    &__input{
+      @include input__default;
+    }
+}

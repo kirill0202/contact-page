@@ -1,0 +1,20 @@
+@import '../../style/mixin/mixin.scss';
+
+.header{
+    min-width: auto;
+    padding: 10px;
+    background-color:  #343a40;
+    &__title{
+        padding: 20px;
+        margin: 0;
+        color: #fff;
+    }
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logout-button{
+        @include button__default;
+    }
+}

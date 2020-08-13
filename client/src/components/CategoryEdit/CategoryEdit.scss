@@ -1,0 +1,14 @@
+@import '../../style/mixin/mixin.scss';
+
+.category__list-edit{
+    padding: 10px;
+    border: 1px solid #ddd;
+ }
+ .category__button-default{
+      @include button__default;
+ }
+ .category__inner{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }

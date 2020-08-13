@@ -1,0 +1,15 @@
+.category__lists-item{
+   padding: 10px;
+   border: 1px solid #ddd;
+}
+.category__lists{
+    padding: 0;
+    min-width: 22%;
+    list-style: none;
+}
+.category__link{
+    text-decoration: none;
+}
+.active__category{
+    font-weight: bold;
+}

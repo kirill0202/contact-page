@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from '../../Button/Button';
 import { useDispatch } from 'react-redux';
-import { actionRemoveContact } from '../../../store/actions/actionRemoveContact';
-import { hideModal } from '../../../store/actions/actionModal/actionModal';
+import { hideModal } from '../../../store/actions/actionModal/actionModal.ts';
+import { actionRemoveCategory } from '../../../store/actions/actionsCategory/actionRemoveCategory.ts';
 import './ModalDelete.scss';
 
 
@@ -14,7 +14,7 @@ const ModalDelete = ({data}) => {
         dispatch(hideModal())
     }
     const removeContact = () => {
-       dispatch(actionRemoveContact(id));
+       dispatch(actionRemoveCategory(id));
        hideModalRemove();
     }
     return (
