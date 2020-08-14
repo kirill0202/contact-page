@@ -1,24 +1,29 @@
-import React, { useState } from 'react';
-import Button from '../../Button/Button';
-import Input from '../../Input/Input';
+import React, { useState, FC } from 'react';
 import { useDispatch } from 'react-redux';
-import { hideModal } from '../../../store/actions/actionModal/actionModal.ts';
-import { actionUpdateCategory } from '../../../store/actions/actionsCategory/actionUpdateCategory.ts';
+import { hideModal } from '../../../store/actions/actionModal/actionModal';
+import { actionUpdateCategory } from '../../../store/actions/actionsCategory/actionUpdateCategory';
+import Input from '../../Input/Input';
+import Button from '../../Button/Button';
 import './ModalUpdate.scss';
 
-const ModalUpdate = ({data}) => {
-    const {title, id} = data;
+
+type modalUpdateTypeProps = {
+    title: string,
+    id: number,
+    props: any
+}
+const ModalUpdate: FC<modalUpdateTypeProps> = ({title, id, props}) => {
     const dispatch = useDispatch();
     const [valueInput, setValueInput] = useState(title);
 
     const hideModalWindow = () => {
         dispatch(hideModal())
     }
-    const onChangeHandle = (e) => {
+    const onChangeHandle = (e:any): void => {
         setValueInput(e.target.value);
     }
     const updateContact = () => {
-      const updateDataContact = {
+      const updateDataContact:any = {
           title:valueInput,
           id
       }
@@ -30,14 +35,21 @@ const ModalUpdate = ({data}) => {
             <div className="poppup__modal">
                 <div className="poppup__wrapper">
                    <div className="poppup__modal-content">
-                     <Input 
+                     <Input
                      placeholder='update contact' 
                      value={valueInput} 
+                     {...props}
                      onChange={onChangeHandle}/>
                    </div>
                     <div className="poppup__footer-modal">
-                        <Button title='Сохранить'onClick={updateContact} classnamestyle={'cyan accent-3'}/>
-                        <Button title='Закрыть' onClick={hideModalWindow} />
+                        <Button title='Сохранить'
+                         {...props}
+                         onClick={updateContact}
+                         classnamestyle={'cyan accent-3'}/>
+                        <Button 
+                        {...props}
+                        title='Закрыть' 
+                        onClick={hideModalWindow} />
                     </div>
                 </div>
             </div>

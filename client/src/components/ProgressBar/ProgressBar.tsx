@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './ProgressBar.scss';
 
-const ProgressBar = ({percentCompleted}) => {
+type ProgressBarType = {
+    percentCompleted: number;
+}
+const ProgressBar: FC<ProgressBarType> = ({percentCompleted}) => {
+    
     return (
         <div className="progressbar">
             <div className="progressbar__active" style={{ width: `${percentCompleted}%` }}>

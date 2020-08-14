@@ -5,6 +5,7 @@ import { AuthContext } from '../../context/AuthContext';
 import { useHistory } from 'react-router-dom';
 import './Header.scss';
 
+
 const Header = () => {
     const auth = useContext(AuthContext);
     const history = useHistory();

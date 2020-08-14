@@ -3,11 +3,22 @@ import { NavLink } from 'react-router-dom';
 import CategoryEdit from '../CategoryEdit/CategoryEdit';
 import './Category.scss';
 
-const Category = ({title, categoryId, isPathName, matchTaskId}) => {
+
+
+
+type CategoryPropsType = {
+    title: string ,
+    categoryId: number, 
+    isPathName: string, 
+    matchTaskId: number,
+    props: any,
+}
+
+const Category: React.FC<CategoryPropsType> = ({title, categoryId, isPathName, matchTaskId, props})=> {
  
     return (
         <>
-       {isPathName ? <CategoryEdit title={title} categoryId={categoryId} matchTaskId={matchTaskId}/> 
+       {isPathName ? <CategoryEdit title={title} categoryId={categoryId} matchTaskId={matchTaskId} props={props}/> 
           : <li 
             className="category__lists-item">
             <NavLink activeClassName="active__category"

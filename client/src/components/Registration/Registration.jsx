@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import {useMessage} from '../../hooks/message.errors';
-import AuthUserRegisterFormContainer from './RegistrationForm/RegistretionForm';
+import Registration from './RegistrationForm/RegistrationForm';
 import { useHttp } from '../../hooks/http.hook';
 import './Registration.scss';
 
@@ -25,7 +25,7 @@ const AuthUserRegisterForm = () => {
      }, [error, clearError])
      return(
         <div className="row form">
-          <AuthUserRegisterFormContainer onSubmit={handleRegisterForm} disabled={loading}/>
+          <Registration onSubmit={handleRegisterForm} disabled={loading}/>
        </div>
      )
 }

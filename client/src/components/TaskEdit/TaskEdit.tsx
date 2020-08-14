@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { FC } from 'react';
 import TaskEditFormContainer from './TaskEditForm/TaskEditForm';
 import CategoryContainer from '../../containers/CategoryContainer';
 import { useDispatch } from 'react-redux';
-import './TaskEdit.scss';
-import { actionUpdateTask } from '../../store/actions/actionsTask/actionUpdateTask.ts';
+import { actionUpdateTask } from '../../store/actions/actionsTask/actionUpdateTask';
 import { useHistory } from 'react-router-dom';
+import './TaskEdit.scss';
 
-const TaskEdit = ({ title, description, done , taskId, categoryId}) => {
+type TaskEditType = {
+    title: string,
+    description:string,
+    done: boolean,
+    taskId: number,
+    categoryId: number
+}
+const TaskEdit: FC<TaskEditType> = ({ title, description, done , taskId, categoryId}) => {
     const dispatch= useDispatch();
     const history = useHistory();
 
@@ -14,15 +21,15 @@ const TaskEdit = ({ title, description, done , taskId, categoryId}) => {
         history.push(`/home/category/${categoryId}`)
     }
 
-    const handlerForm = (values) => {
-        const taskEditForm = {
+    const handlerForm = (values: any) => {
+        const taskEditForm:any = {
             title: values.formTitle,
             done: values.formCheckbox,
             description: values.formDescription,
             taskId
         }
         dispatch(actionUpdateTask(taskEditForm));
-        history.push(`/home/Category/${categoryId}`)
+        history.push(`/home/category/${categoryId}`)
     }
     return (
         <div className="task__edit container">

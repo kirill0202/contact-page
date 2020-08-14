@@ -2,8 +2,9 @@ import React from 'react';
 import { Field, reduxForm } from "redux-form";
 import { Link } from 'react-router-dom';
 import Button from '../../Button/Button';
-import Input from '../../Input/Input';
 import { pathRegistation } from '../../../path/path';
+import Input from '../../Input/Input';
+
 
 const LoginForm = ({ handleSubmit, disabled}) => {
     return (

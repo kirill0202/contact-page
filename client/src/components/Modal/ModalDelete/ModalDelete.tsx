@@ -1,20 +1,25 @@
-import React from 'react';
-import Button from '../../Button/Button';
+import React, { FC } from 'react';
+
 import { useDispatch } from 'react-redux';
-import { hideModal } from '../../../store/actions/actionModal/actionModal.ts';
-import { actionRemoveCategory } from '../../../store/actions/actionsCategory/actionRemoveCategory.ts';
+import { hideModal } from '../../../store/actions/actionModal/actionModal';
+import { actionRemoveCategory } from '../../../store/actions/actionsCategory/actionRemoveCategory';
 import './ModalDelete.scss';
+import Button from '../../Button/Button';
 
+type ModalDeleteTypeProps = {
+    title: string,
+    categoryId: number,
+    props: any,
+    
+}
 
-
-const ModalDelete = ({data}) => {
-    const {title, id} = data;
+const ModalDelete: FC<ModalDeleteTypeProps> = ({title, categoryId, props}) => {
     const dispatch = useDispatch();
     const hideModalRemove = () => {
         dispatch(hideModal())
     }
     const removeContact = () => {
-       dispatch(actionRemoveCategory(id));
+       dispatch(actionRemoveCategory(categoryId));
        hideModalRemove();
     }
     return (
@@ -26,8 +31,8 @@ const ModalDelete = ({data}) => {
                   </p>
               </div>
               <div className="modal__content-footer">
-                 <Button title="Удалить" onClick={removeContact} classnamestyle='deep-orange'/>
-                 <Button title="Закрыть" onClick={hideModalRemove}/>
+                 <Button title="Удалить" onClick={removeContact} classnamestyle='deep-orange' {...props}/>
+                 <Button title="Закрыть" onClick={hideModalRemove} {...props}/>
               </div>
             </div> 
         </div>

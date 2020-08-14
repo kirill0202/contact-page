@@ -1,9 +1,9 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import Button from '../../Button/Button';
-import Input from '../../Input/Input';
 import { Link } from 'react-router-dom';
 import { pathLogin } from '../../../path/path';
+import Input from '../../Input/Input';
+import Button from '../../Button/Button';
 
 
 

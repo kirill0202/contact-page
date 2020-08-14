@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames';
 
-
-const Button = ({ title , classnamestyle, type , disabled, onClick}) => {
+type buttonTypes  = {
+    title: string,
+    classnamestyle: string,
+    type: any,
+    disabled: boolean,
+    onClick: ()=> void;
+}
+const Button: FC<buttonTypes> = ({ title , classnamestyle, type , disabled, onClick}) => {
     return (
         <button
          type={type}
          className={classNames("btn waves-effect waves-light", classnamestyle)} 
-         type="submit" 
          onClick={onClick}
          disabled={disabled}
          name="action">

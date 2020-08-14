@@ -1,7 +1,7 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
-import Input from '../../Input/Input';
 import Textarea from '../../Textarea/Textarea';
+import Input from '../../Input/Input';
 import Button from '../../Button/Button';
 
 const TaskEditForm = ({handleSubmit, onClick}) => {

@@ -1,9 +1,10 @@
 import React from 'react';
 import Input from '../Input/Input';
-import Button from '../Button/Button';
 import { useHistory } from 'react-router-dom';
-import './Search.scss';
 import { useState } from 'react';
+import Button from '../Button/Button';
+import './Search.scss';
+
 
 const Search = () => {
     const url = new URL(window.location.href);

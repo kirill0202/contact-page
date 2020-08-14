@@ -1,5 +1,5 @@
 import React from 'react';
-import Category from '../components/Category/Category';
+import Category from '../components/Category/Category.tsx';
 import { useSelector } from 'react-redux';
 import { useRouteMatch } from 'react-router-dom';
 import { pathTaskEdit } from '../path/path';
@@ -11,7 +11,6 @@ const CategoryContainer = () => {
     const match = useRouteMatch();
     const pathName = match.path;
     const matchTaskId = +match.params.id;
-  
     const isPathName = pathName === pathTaskEdit;
 
 

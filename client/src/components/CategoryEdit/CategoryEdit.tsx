@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
-import { actionUpdateTask } from '../../store/actions/actionsTask/actionUpdateTask.ts';
+import { actionUpdateTask } from '../../store/actions/actionsTask/actionUpdateTask';
 import { useHistory } from 'react-router-dom';
 import './CategoryEdit.scss';
 
-const CategoryEdit = ({ title, categoryId, matchTaskId}) => {
+type categoryTaskType = {
+    title: string,
+    categoryId: number,
+    matchTaskId: number,
+    props: any
+}
+
+const CategoryEdit: FC<categoryTaskType> = ({ title, categoryId, matchTaskId, props}) => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const moveCategoryHandler = () => {
-        const moveTask = {
+    const moveCategoryHandler = ()=> {
+        const moveTask: any = {
             taskId: matchTaskId,
             categoryId
         }
@@ -24,7 +31,7 @@ const CategoryEdit = ({ title, categoryId, matchTaskId}) => {
                     {title}
                 </div>
                 <div className="category__control">
-                   <Button title="move to category" classnamestyle="category__button-default" onClick={moveCategoryHandler}/>
+                   <Button title="move to category" classnamestyle="category__button-default" onClick={moveCategoryHandler} {...props}/>
                 </div>
             </div>
         </li>

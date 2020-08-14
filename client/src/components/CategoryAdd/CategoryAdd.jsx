@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import Input from '../Input/Input';
-import Button from '../Button/Button';
+
 import { useDispatch } from 'react-redux';
 import { actionAddCategory } from '../../store/actions/actionsCategory/actionAddCategory.ts';
+import Input from '../Input/Input';
 import './CategoryAdd.scss';
+import Button from '../Button/Button';
+
 
 
 const CategoryAdd = () => {
@@ -27,7 +29,8 @@ const CategoryAdd = () => {
           classnamestyle="category__input" 
           value={value} 
           onChange={handlerInput}/>
-         <Button title="Add" 
+         <Button 
+         title="Add" 
          classnamestyle="category__button" 
          onClick={addNewCategory}/>
        </div>
