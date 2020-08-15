@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Input from '../Input/Input';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import Button from '../Button/Button';
 import './Search.scss';
 
+const Search = ({props}) => {
 
-const Search = () => {
     const url = new URL(window.location.href);
     const [value, setVaule] = useState('');
     const history = useHistory();
@@ -21,8 +21,8 @@ const Search = () => {
     }
     return (
         <div className="search">
-            <Input placeholder="search" classnamestyle="search__input" value={value} onChange={onChangeHandle} />
-            <Button title="search" classnamestyle="search__button" onClick={searchHandler} />
+            <Input placeholder="search" classnamestyle="search__input" value={value} {...props} onChange={onChangeHandle} />
+            <Button title="search" classnamestyle="search__button" {...props} onClick={searchHandler} />
         </div>
     )
 }

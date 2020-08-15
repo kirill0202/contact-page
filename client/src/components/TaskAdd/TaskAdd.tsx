@@ -13,9 +13,16 @@ import { AnyARecord } from 'dns';
 type TaskAddProps = {
     props: any,
 }
+type newTaskType = {
+    title: string,
+    taskId: number,
+    description: string,
+    done: boolean,
+    categoryId: number
+    
+}
 
-
-const TaskAdd: FC<TaskAddProps> = ({props}) => {
+const TaskAdd: FC<TaskAddProps & newTaskType> = ({props}) => {
     const [value, setValue]= useState('');
     const match: any = useRouteMatch(pathCategory);
     const dispatch = useDispatch();
@@ -30,7 +37,7 @@ const TaskAdd: FC<TaskAddProps> = ({props}) => {
         if(!categoryId){
             return console.log('Категория должна быть выбранна')
         }
-        const newTask: any ={
+        const newTask = {
             title: value,
             taskId: Date.now(),
             description: '',

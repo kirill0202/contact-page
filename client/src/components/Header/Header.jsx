@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import Search from '../Search/Search';
 import Button from '../Button/Button';
 import { AuthContext } from '../../context/AuthContext';
 import { useHistory } from 'react-router-dom';
+import Search from '../Search/Search';
 import './Header.scss';
 
 

@@ -2,9 +2,9 @@ import React from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import HomePage from './HomePage';
 import Registration from '../components/Registration/Registration';
-import Login from '../components/Login/Login';
 import { pathHome, pathLogin, pathRegistation, pathTaskEdit } from '../path/path';
 import TaskEditContainer from '../containers/TaskEditContainer';
+import Login from '../components/Login/Login';
 
 export const useRoutes = isAuthorized => {
    if(isAuthorized){

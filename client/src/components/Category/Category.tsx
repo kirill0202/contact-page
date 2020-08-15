@@ -12,13 +12,14 @@ type CategoryPropsType = {
     isPathName: string, 
     matchTaskId: number,
     props: any,
+    taskId: number
 }
 
-const Category: React.FC<CategoryPropsType> = ({title, categoryId, isPathName, matchTaskId, props})=> {
+const Category: React.FC<CategoryPropsType> = ({title, categoryId, isPathName, matchTaskId, props, taskId })=> {
  
     return (
         <>
-       {isPathName ? <CategoryEdit title={title} categoryId={categoryId} matchTaskId={matchTaskId} props={props}/> 
+       {isPathName ? <CategoryEdit title={title} categoryId={categoryId} matchTaskId={matchTaskId} props={props} taskId={taskId}/> 
           : <li 
             className="category__lists-item">
             <NavLink activeClassName="active__category"

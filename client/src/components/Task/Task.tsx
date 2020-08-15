@@ -14,16 +14,19 @@ type taskPropsType = {
     taskId: number,
     props: any
 }
+type updateTaskType = {
+    done: boolean,
+    taskId: false
+}
+const Task: React.FC<taskPropsType & updateTaskType> = ({ title, done, taskId, props }) => {
 
-const Task: React.FC<taskPropsType> = ({ title, done, taskId, props }) => {
-
-    const [checkend, setChekend] = useState(done);
+    const [checkend, setChekend] = useState<boolean>(done);
     const dispatch = useDispatch();
     const handlerCheckend = () => {
         setChekend(!checkend)
     }
     const updateTaskCheckend = () => {
-        const updateTask: any = {
+        const updateTask = {
             done: !checkend,
             taskId
         }

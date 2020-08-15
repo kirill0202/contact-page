@@ -11,7 +11,7 @@ type InputTypes = {
     id: number,
     checked: boolean
 }
-const Input:React.FC<InputTypes> = ({ input, type, value, props, placeholder, id, classnamestyle, onChange, checked})=> {
+const Input:React.FC<InputTypes> = ({ input, type, props, value, placeholder, id, classnamestyle, onChange, checked})=> {
     return(
         <input 
         {...props}

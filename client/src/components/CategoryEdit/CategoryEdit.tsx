@@ -11,13 +11,17 @@ type categoryTaskType = {
     matchTaskId: number,
     props: any
 }
+type moveCategoryHandlerType = {
+    taskId: number,
+    categoryId: number
+}
 
-const CategoryEdit: FC<categoryTaskType> = ({ title, categoryId, matchTaskId, props}) => {
+const CategoryEdit: FC<categoryTaskType & moveCategoryHandlerType> = ({ title, taskId, categoryId, matchTaskId, props}) => {
     const dispatch = useDispatch();
     const history = useHistory();
 
     const moveCategoryHandler = ()=> {
-        const moveTask: any = {
+        const moveTask= {
             taskId: matchTaskId,
             categoryId
         }

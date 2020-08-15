@@ -13,7 +13,13 @@ type TaskEditType = {
     taskId: number,
     categoryId: number
 }
-const TaskEdit: FC<TaskEditType> = ({ title, description, done , taskId, categoryId}) => {
+type TaskEditFormType = {
+    title: string,
+    description:string,
+    done: boolean,
+    taskId: number,
+}
+const TaskEdit: FC<TaskEditType & TaskEditFormType> = ({ title, description, done , taskId, categoryId}) => {
     const dispatch= useDispatch();
     const history = useHistory();
 
@@ -21,8 +27,8 @@ const TaskEdit: FC<TaskEditType> = ({ title, description, done , taskId, categor
         history.push(`/home/category/${categoryId}`)
     }
 
-    const handlerForm = (values: any) => {
-        const taskEditForm:any = {
+    const handlerForm = (values: any): void => {
+        const taskEditForm = {
             title: values.formTitle,
             done: values.formCheckbox,
             description: values.formDescription,
