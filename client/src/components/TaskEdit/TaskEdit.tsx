@@ -11,7 +11,7 @@ type TaskEditType = {
     description:string,
     done: boolean,
     taskId: number,
-    categoryId: number
+    categoryId: number,
 }
 type TaskEditFormType = {
     title: string,
@@ -35,7 +35,7 @@ const TaskEdit: FC<TaskEditType & TaskEditFormType> = ({ title, description, don
             taskId
         }
         dispatch(actionUpdateTask(taskEditForm));
-        history.push(`/home/category/${categoryId}`)
+        resetHandler();
     }
     return (
         <div className="task__edit container">
@@ -44,7 +44,6 @@ const TaskEdit: FC<TaskEditType & TaskEditFormType> = ({ title, description, don
             </div>
             <div className="task__edit-form">
                 <TaskEditFormContainer
-                    onClick={resetHandler}
                     onSubmit={handlerForm}
                     initialValues={{
                         formTitle: title,

@@ -4,12 +4,12 @@ import Textarea from '../../Textarea/Textarea';
 import Input from '../../Input/Input';
 import Button from '../../Button/Button';
 
-const TaskEditForm = ({handleSubmit, onClick}) => {
+const TaskEditForm = ({handleSubmit}) => {
     return (
         <form onSubmit={handleSubmit} className="form__task">
             <div className="form__button">
                <Button title="edit" classnamestyle="button__edit" />
-               <Button title="canel" classnamestyle="button__edit button__canel" type="button" onClick={onClick}/>
+               <Button title="canel" classnamestyle="button__edit button__canel" type="button"/>
             </div>
             <div className="form__input-title">
                 <Field
