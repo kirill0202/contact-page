@@ -9,7 +9,7 @@ import './Category.scss';
 type CategoryPropsType = {
     title: string ,
     categoryId: number, 
-    isPathName: string, 
+    isPathName: boolean, 
     matchTaskId: number,
     props: any,
     taskId: number

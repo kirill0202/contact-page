@@ -16,7 +16,7 @@ type taskPropsType = {
 }
 type updateTaskType = {
     done: boolean,
-    taskId: false
+    taskId: number
 }
 const Task: React.FC<taskPropsType & updateTaskType> = ({ title, done, taskId, props }) => {
 

@@ -3,7 +3,7 @@ import { reducer as formReducer } from "redux-form";
 import modalReducer from './modalReducer';
 import categoryReducer from './categoryReducer';
 import taskReducer from './taskReducer';
-import { FC } from 'react';
+
 
 
 
@@ -13,3 +13,5 @@ export const rootReducers = combineReducers({
     taskReducer: taskReducer,
     form: formReducer
 })
+type rootReducersType = typeof rootReducers;
+export type AppStateType = ReturnType<rootReducersType>;

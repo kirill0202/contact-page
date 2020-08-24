@@ -1,9 +1,9 @@
 import React from 'react';
 import CategoryAdd from '../CategoryAdd/CategoryAdd';
-import TaskContainer from '../../containers/TaskContainer';
-import CategoryContainer from '../../containers/CategoryContainer';
 import TaskAdd from '../TaskAdd/TaskAdd';
 import ProgressBarContainer from '../../containers/ProgressBarContainer';
+import TaskContainer from '../../containers/TaskContainer';
+import CategoryContainer from '../../containers/CategoryContainer';
 import './Main.scss';
 
 
@@ -19,7 +19,7 @@ const Main = () => {
                     <TaskAdd />
                 </div>
                 <div className="todo__group">
-                    <CategoryContainer />
+                    <CategoryContainer/>
                     <TaskContainer />
                 </div>
             </div>

@@ -8,8 +8,7 @@ import './App.scss';
 function App() {
   const { token, login, userId, logout } = useAuthorized();
   const isAuthorized = !!token;
-  const routes = useRoutes(isAuthorized);
-
+  const routes = useRoutes(true);
   return (
     <AuthContext.Provider value={{
       token, login, logout, userId, isAuthorized

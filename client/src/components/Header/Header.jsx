@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import Button from '../Button/Button';
 import { AuthContext } from '../../context/AuthContext';
-import { useHistory } from 'react-router-dom';
 import Search from '../Search/Search';
+import { useHistory } from 'react-router-dom';
 import './Header.scss';
 
 
@@ -10,6 +10,7 @@ const Header = () => {
     const auth = useContext(AuthContext);
     const history = useHistory();
 
+    
     const logoutHandler = () => {
         auth.logout();
         history.push('/');
