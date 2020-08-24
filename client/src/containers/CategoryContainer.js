@@ -1,6 +1,7 @@
 import React from 'react';
 import Category from '../components/Category/Category';
 import { useSelector } from 'react-redux';
+import axios from 'axios'
 import { useRouteMatch } from 'react-router-dom';
 import { pathTaskEdit } from '../path/path';
 
@@ -8,7 +9,7 @@ import { pathTaskEdit } from '../path/path';
 
 const CategoryContainer = () => {
     const category = useSelector((state)=> state.categoryReducer.category);
-
+     axios.get('https://social-network.samuraijs.com/api/1.0/users')
     const match = useRouteMatch();
     const pathName = match.path;
     const matchTaskId = +match.params.id;
