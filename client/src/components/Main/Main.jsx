@@ -7,6 +7,8 @@ import CategoryContainer from '../../containers/CategoryContainer';
 import './Main.scss';
 
 
+
+
 const Main = () => {
     return (
         <main className="container">

@@ -5,8 +5,6 @@ type ProgressBarType = {
     percentCompleted: number;
 }
 const ProgressBar: FC<ProgressBarType> = ({percentCompleted}) => {
-    console.log(percentCompleted)
-    
     return (
         <div className="progressbar">
             <div className="progressbar__active" style={{ width: `${percentCompleted}%` }}>

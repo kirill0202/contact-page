@@ -16,7 +16,7 @@ export const useRoutes = isAuthorized => {
              <Route path={pathHome}> 
                  <HomePage/>
              </Route>
-             <Redirect to={pathHome} />
+             {/* <Redirect to={pathHome} /> */}
            </Switch>
        )
    }

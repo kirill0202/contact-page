@@ -5,6 +5,8 @@ export const SHOW_MODAL = "OPEN_MODAL";
 export const HIDE_MODAL = "HIDE_MODAL";
 export const UPDATE__TASK = "TASK/UPDATE_TASK";
 export const ADD_TASK="TASK/ADD_TASK";
+export const SET_CATEGORY = "CATEGORY/SET_CATEGORY";
+
 
 
 
